@@ -10,9 +10,11 @@ permissions:
   contents: read
 
 jobs:
+  setup-gradle:
+    uses: ./.github/workflows/install-gradle.yml
   publish:
     name: "Publish with JDK ${{ matrix.java }} on ${{ matrix.os }}"
-    uses: ./.github/workflows/install-gradle.yml
+    runs-on: ubuntu-latest
     steps:
       - name: 'Cancel previous workflow actions'
         uses: styfle/cancel-workflow-action@0.12.1
