@@ -17,5 +17,5 @@ jobs:
   build:
     uses: ./.github/workflows/install-gradle.yml
     with:
-      gradle-command-title: "Build with JDK ${{ matrix.java }} on ${{ matrix.os }}"
+      gradle-command-title: "Build"
       gradle-command: "build"
