@@ -1,0 +1,23 @@
+name: "Publish Artifacts"
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  publish:
+    name: "Publish with JDK ${{ matrix.java }} on ${{ matrix.os }}"
+    uses: ./.github/workflows/install-gradle.yml
+    steps:
+      - name: 'Cancel previous workflow actions'
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ github.token }}
+      - name: Publish with Gradle
+        shell: bash
+        run: ./gradlew publish

@@ -1,0 +1,24 @@
+name: "Install Gradle"
+on:
+  workflow_call:
+
+jobs:
+  setup-gradle:
+    name: "Setup Gradle on ${{ matrix.os }}"
+    strategy:
+      matrix:
+        java: [ 8, 11, 17, 21 ]
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Java JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ matrix.java }}
+          cache: 'gradle'
+      - name: Ensure Gradle permission
+        run: chmod +x gradlew
+      - uses: gradle/actions/setup-gradle@v4

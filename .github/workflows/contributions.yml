@@ -1,0 +1,14 @@
+name: "Contribution automation"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  contribute-readme:
+    runs-on: ubuntu-latest
+    name: A job to automate contributions in README
+    steps:
+      - name: Generate contribution List
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
