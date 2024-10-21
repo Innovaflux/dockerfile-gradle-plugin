@@ -17,6 +17,6 @@ jobs:
     name: "Gradle Wrapper Validation"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: "Checkout repository"
         uses: actions/checkout@v4
       - uses: gradle/wrapper-validation-action@v3

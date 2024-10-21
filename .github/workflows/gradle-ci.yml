@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  setup-gradle:
+  build:
     uses: ./.github/workflows/install-gradle.yml
     with:
       gradle-command-title: "Build with JDK ${{ matrix.java }} on ${{ matrix.os }}"
