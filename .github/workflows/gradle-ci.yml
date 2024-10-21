@@ -15,13 +15,7 @@ permissions:
 
 jobs:
   build:
-    name: "Build with JDK ${{ matrix.java }} on ${{ matrix.os }}"
     uses: ./.github/workflows/install-gradle.yml
-    steps:
-      - name: 'Cancel previous workflow actions'
-        uses: styfle/cancel-workflow-action@0.12.1
-        with:
-          access_token: ${{ github.token }}
-      - name: Build with Gradle
-        shell: bash
-        run: ./gradlew build
+    with:
+      gradle-command-title: "Build"
+      gradle-command: "build"
