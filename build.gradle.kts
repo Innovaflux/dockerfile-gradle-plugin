@@ -18,7 +18,7 @@ dependencies {
   implementation("com.google.guava:guava:33.3.1-jre")
   implementation(gradleApi())
   testImplementation(gradleTestKit())
-  testImplementation("org.mockito:mockito-core:5.14.1")
+  testImplementation("org.mockito:mockito-core:5.14.2")
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.2")
   testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.2")
   testImplementation("org.junit.jupiter:junit-jupiter-params:5.11.2")
