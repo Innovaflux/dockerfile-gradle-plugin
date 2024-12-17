@@ -15,7 +15,7 @@ repositories {
 dependencies {
   annotationProcessor("org.projectlombok:lombok:1.18.36")
   compileOnly("org.projectlombok:lombok:1.18.36")
-  implementation("com.google.guava:guava:33.3.1-jre")
+  implementation("com.google.guava:guava:33.4.0-jre")
   implementation(gradleApi())
   testImplementation(gradleTestKit())
   testImplementation("org.mockito:mockito-core:5.14.2")
